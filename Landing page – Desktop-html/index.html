@@ -32,6 +32,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #b0441c;outline-offset
 <nav aria-label="Điều hướng chính" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 14px; line-height: 20px; font-weight: 600">
 <a href="#san-pham" style="color: #26221d; text-decoration: none">Sản phẩm</a>
 <a href="#bang-gia" style="color: #26221d; text-decoration: none">Bảng giá</a>
+<a href="#tinh-vat-tu" style="color: #26221d; text-decoration: none">Tính vật tư</a>
 <a href="#khach-hang" style="color: #26221d; text-decoration: none">Nhà thầu &amp; Chủ nhà</a>
 <a href="#dat-hang" style="color: #26221d; text-decoration: none">Cách đặt hàng</a>
 <a href="#bao-gia" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; box-sizing: border-box; background: #b0441c; color: #ffffff; text-decoration: none; border-radius: 4px; font-weight: 700">
@@ -190,7 +191,8 @@ Nhắn Zalo 0901 234 567
 </div>
 <span style="font-size: 14px; line-height: 20px; color: #5e5850">Cập nhật 27/11/2026 · Chưa gồm phí vận chuyển</span>
 </div>
-<div style="overflow-x: auto; border: 1px solid #cfc8bc; border-radius: 4px">
+<div id="vx-cart-root"></div>
+<div id="vx-static-table" style="overflow-x: auto; border: 1px solid #cfc8bc; border-radius: 4px">
 <table style="width: 100%; min-width: 640px; border-collapse: collapse; text-align: left">
 <thead>
 <tr style="background: #efe9df">
@@ -210,6 +212,7 @@ Nhắn Zalo 0901 234 567
 </table>
 </div>
 <p style="margin: 0; font-size: 14px; line-height: 20px; color: #5e5850">Đơn số lượng lớn có giá riêng. <a href="#bao-gia" style="font-weight: 700">Gửi danh sách để nhận báo giá theo khối lượng.</a></p>
+<div id="vx-tier-root"></div>
 </div>
 </section>
 
@@ -240,14 +243,26 @@ Nhắn Zalo 0901 234 567
 <h3 style="margin: 0; font-size: 22px; line-height: 30px; font-weight: 700">Chưa biết mua bao nhiêu? Chúng tôi tính giúp</h3>
 </div>
 <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px">
-<li>Gửi diện tích và số tầng, nhận ước tính số gạch, xi măng, cát cần mua</li>
+<li>Nhập diện tích và số tầng, xem ngay ước tính số gạch, xi măng, cát cần mua</li>
 <li>Mua lẻ từ 1 bao, giao vào hẻm bằng xe nhỏ</li>
 <li>Báo trước phí vận chuyển, không phát sinh khi giao</li>
 <li>Giải thích dễ hiểu khác nhau giữa các loại hàng</li>
 </ul>
-<a href="#bao-gia" class="btn-primary" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; background: #b0441c; border-radius: 4px; color: #ffffff; text-decoration: none; font-weight: 700">Nhờ tư vấn số lượng</a>
+<a href="#tinh-vat-tu" class="btn-primary" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; background: #b0441c; border-radius: 4px; color: #ffffff; text-decoration: none; font-weight: 700">Tự tính số lượng vật tư</a>
 </div>
 </div>
+</div>
+</section>
+
+<!-- Material calculator -->
+<section id="tinh-vat-tu">
+<div style="max-width: 1200px; margin: 0 auto; padding: 80px clamp(16px, 4vw, 40px) 0; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 640px">
+<span style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 0.06em; color: #b0441c">TÍNH VẬT TƯ</span>
+<h2 style="margin: 0; font-size: 32px; line-height: 40px; font-weight: 700; letter-spacing: -0.01em">Xây nhà cần bao nhiêu gạch, xi măng?</h2>
+<p style="margin: 0; color: #5e5850">Nhập diện tích và số tầng. Trang tự ước tính số lượng và giá tạm tính theo bảng giá hôm nay.</p>
+</div>
+<div id="vx-calc-root"></div>
 </div>
 </section>
 
@@ -379,5 +394,6 @@ class Component extends DCLogic {
   }
 }
 </script>
+<script src="./vx-tuong-tac.js"></script>
 </body>
 </html>
